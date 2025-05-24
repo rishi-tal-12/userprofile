@@ -5,14 +5,14 @@ import Moralis from 'moralis';
 let requireddefi=[];
 
   await Moralis.start({
-    apiKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6IjJjYWY5NGVhLTEzYWEtNDkyNy05YjI2LTQ0NzE0MTgyODdlNSIsIm9yZ0lkIjoiNDQ4NTU4IiwidXNlcklkIjoiNDYxNTEwIiwidHlwZUlkIjoiYmE2NDFjNTctZmNmOS00ZmI1LTg1YWYtZTg2OGUzZDkwOThhIiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3NDc5MTk0MTksImV4cCI6NDkwMzY3OTQxOX0.kxF6mXIRPOWXQ1H-sPtDJRqlsh5G_EwPVSpHl4bK42g"
+    apiKey: "apikey"
   });
 
 try {
 
   const responsedefi = await Moralis.EvmApi.wallets.getDefiPositionsSummary({
     "chain": "0x1",
-    "address": "0xd100d8b69c5ae23d6aa30c6c3874bf47539b95fd"
+    "address": ""
   });
 
   requireddefi= responsedefi.raw.map((item)=>{
@@ -38,7 +38,7 @@ try {
     "excludeUnverifiedContracts": true,
     "maxTokenInactivity": 1,
     "minPairSideLiquidityUsd": 1000,
-    "address": "0xd100d8b69c5ae23d6aa30c6c3874bf47539b95fd"
+    "address": ""
   });
 
  requirednetworth_usd=responsenetworth.raw.total_networth_usd;
@@ -58,7 +58,7 @@ try {
     "format": "decimal",
     "normalizeMetadata": true,
     "mediaItems": false,
-    "address": "0xd100d8b69c5ae23d6aa30c6c3874bf47539b95fd"
+    "address": ""
   });
   
   totalnfts=responsenft.raw.result.length;
@@ -83,7 +83,7 @@ try {
 
   const responsepnl = await Moralis.EvmApi.wallets.getWalletProfitabilitySummary({
     "chain": "0x1",
-    "address": "0xd100d8b69c5ae23d6aa30c6c3874bf47539b95fd"
+    "address": ""
   });
 
    requiredpnl={ 
@@ -103,7 +103,7 @@ try {
 
   const responsetoken = await Moralis.EvmApi.token.getWalletTokenBalances({
     "chain": "0x1",
-    "address": "0xd100d8b69c5ae23d6aa30c6c3874bf47539b95fd"
+    "address": ""
   });
   totaltokens=responsetoken.raw.length;
   requiredtoken= responsetoken.raw.map((item)=>{
@@ -126,7 +126,7 @@ console.log(totaltokens);
 console.log(requiredtoken);
 console.log(requirednetworth_usd);
 
-let address="0xd100d8b69c5ae23d6aa30c6c3874bf47539b95fd";
+let address="";
 
 return{
     useraddress:address,
