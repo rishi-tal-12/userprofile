@@ -1,10 +1,10 @@
-import { requireddefi } from "./defi";
-import {totalnfts, requirednft } from "./nft";
-import { requiredpnl } from "./pnl";
-import { totaltokens,requiredtoken } from "./token";
-import { requirednetworth_usd } from "./networth";
+import { requireddefi } from "./defi.js";
+import {totalnfts, requirednft } from "./nft.js";
+import { requiredpnl } from "./pnl.js";
+import { totaltokens,requiredtoken } from "./token.js";
+import { requirednetworth_usd } from "./networth.js";
 
-let address;
+let address = "0xffff142f3224bc363c46f47916f23877b90ffe8d";
 
 const userdetails = {
     useraddress:address,
@@ -16,5 +16,5 @@ const userdetails = {
     totalusertokeninfo:requiredtoken,
     totalusernetworth:requirednetworth_usd
 }
-
+console.log(userdetails);
 export {userdetails};

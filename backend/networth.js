@@ -1,10 +1,14 @@
 import Moralis from 'moralis';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 
 let requirednetworth_usd;
 
 try {
   await Moralis.start({
-    apiKey: "apikey"
+    apiKey: process.env.MORALIS_API_KEY
   });
 
   const responsenetworth = await Moralis.EvmApi.wallets.getWalletNetWorth({

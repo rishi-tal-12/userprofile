@@ -1,11 +1,13 @@
 import Moralis from 'moralis';
+import dotenv from 'dotenv';
+dotenv.config();
 
 let requiredtoken =[];
 let totaltokens;
 
 try {
   await Moralis.start({
-    apiKey: "apikey"
+    apiKey: process.env.MORALIS_API_KEY
   });
 
   const responsetoken = await Moralis.EvmApi.token.getWalletTokenBalances({

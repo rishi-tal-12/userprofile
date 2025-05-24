@@ -1,9 +1,12 @@
 import Moralis from 'moralis';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 let requireddefi=[];
 try {
   await Moralis.start({
-    apiKey: "apikey"
+		apiKey: process.env.MORALIS_API_KEY,
   });
 
   const responsedefi = await Moralis.EvmApi.wallets.getDefiPositionsSummary({

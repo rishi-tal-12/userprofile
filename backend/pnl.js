@@ -1,10 +1,12 @@
 import Moralis from 'moralis';
+import dotenv from 'dotenv';
+dotenv.config();
 
 let requiredpnl;
 
 try {
   await Moralis.start({
-    apiKey: "apikey"
+    apiKey: process.env.MORALIS_API_KEY
   });
 
   const responsepnl = await Moralis.EvmApi.wallets.getWalletProfitabilitySummary({

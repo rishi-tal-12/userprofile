@@ -1,18 +1,20 @@
 import Moralis from 'moralis';
+import dotenv from 'dotenv';
+dotenv.config();
 
 let totalnfts;
 let requirednft=[];
 try {
   await Moralis.start({
-    apiKey: "apikey"
+    apiKey: process.env.MORALIS_API_KEY
   });
 
   const responsenft = await Moralis.EvmApi.nft.getWalletNFTs({
-    "chain": "0x1",
-    "format": "decimal",
-    "normalizeMetadata": true,
-    "mediaItems": false,
-    "address": "address"
+		chain: "0x1",
+		format: "decimal",
+		normalizeMetadata: true,
+		mediaItems: false,
+		address: "0xffff142f3224bc363c46f47916f23877b90ffe8d",
   });
   
   totalnfts=responsenft.raw.result.length;
