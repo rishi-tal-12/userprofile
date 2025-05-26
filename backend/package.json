@@ -9,10 +9,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
+    "@google/genai": "^1.0.1",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "moralis": "^2.27.2"
-  }
+    "moralis": "^2.27.2",
+    "openai": "^4.103.0"
+  },
+  "description": ""
 }
