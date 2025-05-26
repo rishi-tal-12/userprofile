@@ -1,3 +1,4 @@
+
 import Moralis from "moralis";
 
 
@@ -5,7 +6,7 @@ async function getuserdetails(address) {
 	let requireddefi = [];
 
 	await Moralis.start({
-		apiKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub25jZSI6IjAzODg0ZWMyLTc4M2MtNDMyZS1hNjI5LWY4MTJmYzNiNTQ2YyIsIm9yZ0lkIjoiNDQ4NTY1IiwidXNlcklkIjoiNDYxNTE3IiwidHlwZUlkIjoiMDU3ZGQ1YzUtMTc5Mi00NDNiLTlkMDQtNDA5MTc3M2I4NjY2IiwidHlwZSI6IlBST0pFQ1QiLCJpYXQiOjE3NDc5MjMxMDcsImV4cCI6NDkwMzY4MzEwN30.FROaHAdn65KP--tMyLcuGA9p5ijGN7TZ6C9XjKvb8BU",
+		apiKey: process.env.MORALIS_API_KEY,
 	});
 
 	try {
