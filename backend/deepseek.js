@@ -151,4 +151,5 @@ async function generateWalletPersonaScores(address) {
 	}
 }
 
+
 export { generateWalletPersonaScores };
