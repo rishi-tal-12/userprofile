@@ -1,6 +1,7 @@
 import express from "express";
 import { GoogleGenAI, Modality } from "@google/genai";
 import { generateWalletPersonaScores } from "./deepseek.js";
+import cors from 'cors';
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -8,7 +9,7 @@ const app = express();
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 app.use(express.json());
-
+app.use(cors());
 // Fixed prompt generator function with proper error handling
 function generateImagePrompt(walletPersona) {
 	// Add null/undefined checks
